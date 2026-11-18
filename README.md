@@ -40,3 +40,11 @@ Sitio estático servido desde la rama `main`, carpeta raíz. El archivo `CNAME` 
 | CNAME | www | abp-tech.github.io |
 
 DNSSEC puede seguir activado: los nameservers no cambian, solo se añaden registros a la zona.
+
+## Medición (Google Analytics 4)
+
+- `js/consentimiento.js`: aviso de cookies y carga de GA4 solo tras «Aceptar».
+- Para activarla, `GA_ID` contiene el ID de medición de la propiedad GA4 de balearicworks.es (`G-SXQL8TMJB2`).
+- Eventos (atributos `data-evento` en el HTML): `pedir_presupuesto`, `click_whatsapp`, `click_telefono`, `click_email`, `consultar_servicio`. Parámetros: `ubicacion` (cabecera, hero, servicios, proyectos, contacto, pie, barra_movil) y `servicio`.
+- Marcar como eventos clave en GA4: `click_whatsapp`, `click_telefono`, `click_email`.
+- `cookies.html`: política de cookies.
