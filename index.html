@@ -28,7 +28,7 @@
     "taxID": "B19822535",
     "url": "https://balearicworks.es/",
     "description": "Reformas integrales y mantenimiento de propiedades en Mallorca.",
-    "email": "balearicworks@outlook.es",
+    "email": "info@balearicworks.es",
     "telephone": "+34621210483",
     "address": {
       "@type": "PostalAddress",
@@ -197,30 +197,87 @@
 
         <div class="contacto__rejilla">
           <div class="contacto__invitacion">
-            <p class="intro">Cuéntanos qué quieres reformar o mantener y dónde está el inmueble.</p>
-            <p class="micro contacto__subrotulo">Para valorar el trabajo, indícanos</p>
-            <ul class="contacto__lista">
-              <li>Tipo de inmueble y municipio</li>
-              <li>Qué necesitas renovar o mantener</li>
-              <li>Fotografías, planos o información disponible</li>
-            </ul>
+            <p class="intro">Cuéntanos qué quieres reformar o mantener y dónde está el inmueble. Te respondemos en horario de atención.</p>
+
+            <div class="contacto__datos contacto__datos--compacto">
+              <div class="dato">
+                <p class="micro">Llámanos</p>
+                <a class="titulo dato__valor" data-evento="click_telefono" data-ubicacion="contacto" href="tel:+34621210483">+34 621 210 483</a>
+                <p class="dato__nota">L–V · 09:00–21:00 &nbsp;·&nbsp; Sábado · 09:00–15:00</p>
+              </div>
+              <div class="dato">
+                <p class="micro">WhatsApp</p>
+                <a class="titulo dato__valor" data-evento="click_whatsapp" data-ubicacion="contacto" href="https://wa.me/34621210483?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">Escríbenos <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="dato">
+                <p class="micro">Correo electrónico</p>
+                <a class="titulo dato__valor" data-evento="click_email" data-ubicacion="contacto" href="mailto:info@balearicworks.es">info@balearicworks.es</a>
+              </div>
+            </div>
           </div>
 
-          <div class="contacto__datos">
-            <div class="dato">
-              <p class="micro">Llámanos</p>
-              <a class="titulo dato__valor" data-evento="click_telefono" data-ubicacion="contacto" href="tel:+34621210483">+34 621 210 483</a>
-              <p class="dato__nota">L–V · 09:00–21:00 &nbsp;·&nbsp; Sábado · 09:00–15:00</p>
+          <form class="formulario" id="formulario" action="https://api.web3forms.com/submit" method="post" aria-labelledby="formulario-titulo">
+            <input type="hidden" name="access_key" value="8e10b8a3-406a-4bd6-9db0-41048cd48e46">
+            <input type="hidden" name="subject" value="Solicitud web · Balearic Works">
+            <input type="hidden" name="consentimiento" value="">
+
+            <h3 id="formulario-titulo" class="formulario__titulo">Solicita tu presupuesto</h3>
+
+            <div class="campo"><label for="f-nombre">Nombre *</label><input id="f-nombre" name="nombre" type="text" autocomplete="given-name" maxlength="80" required></div>
+            <div class="campo"><label for="f-apellidos">Apellidos *</label><input id="f-apellidos" name="apellidos" type="text" autocomplete="family-name" maxlength="120" required></div>
+
+            <div class="campo"><label for="f-telefono">Teléfono *</label><input id="f-telefono" name="telefono" type="tel" autocomplete="tel" maxlength="30" required></div>
+            <div class="campo"><label for="f-email">Correo electrónico *</label><input id="f-email" name="email" type="email" autocomplete="email" maxlength="120" required></div>
+
+            <div class="campo"><label for="f-proyecto">Tipo de proyecto *</label>
+              <select id="f-proyecto" name="proyecto" required>
+                <option value="" selected disabled>Selecciona una opción</option>
+                <option>Reforma integral de vivienda o villa</option>
+                <option>Mantenimiento de propiedad</option>
+                <option>Hotel</option>
+                <option>Local u oficina</option>
+                <option>Otro</option>
+              </select>
             </div>
-            <div class="dato">
-              <p class="micro">WhatsApp</p>
-              <a class="titulo dato__valor" data-evento="click_whatsapp" data-ubicacion="contacto" href="https://wa.me/34621210483?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">Escríbenos <span aria-hidden="true">↗</span></a>
+            <div class="campo"><label for="f-municipio">Municipio del inmueble *</label><input id="f-municipio" name="municipio" type="text" maxlength="80" required></div>
+
+            <div class="campo"><label for="f-empresa">Empresa o establecimiento <span class="campo__op">(opcional)</span></label><input id="f-empresa" name="empresa" type="text" autocomplete="organization" maxlength="120"></div>
+            <div class="campo"><label for="f-plazo">Plazo previsto</label>
+              <select id="f-plazo" name="plazo">
+                <option value="" selected>Sin definir</option>
+                <option>Lo antes posible</option>
+                <option>En 1–3 meses</option>
+                <option>En 3–6 meses</option>
+                <option>Más adelante</option>
+              </select>
             </div>
-            <div class="dato">
-              <p class="micro">Correo electrónico</p>
-              <a class="titulo dato__valor" data-evento="click_email" data-ubicacion="contacto" href="mailto:balearicworks@outlook.es">balearicworks@outlook.es</a>
+
+            <div class="campo campo--ancho"><label for="f-mensaje">Cuéntanos el proyecto *</label>
+              <textarea id="f-mensaje" name="mensaje" rows="5" maxlength="3000" required placeholder="Qué necesitas renovar o mantener, superficie aproximada y estado actual del inmueble."></textarea>
             </div>
-          </div>
+
+            <fieldset class="campo campo--ancho campo--opciones">
+              <legend>Prefiero que me contacten por</legend>
+              <label class="opcion"><input type="radio" name="via" value="Teléfono" checked><span>Teléfono</span></label>
+              <label class="opcion"><input type="radio" name="via" value="WhatsApp"><span>WhatsApp</span></label>
+              <label class="opcion"><input type="radio" name="via" value="Correo"><span>Correo</span></label>
+            </fieldset>
+
+            <input type="checkbox" name="botcheck" class="formulario__hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <label class="campo--ancho consentimiento"><input type="checkbox" id="f-privacidad" name="privacidad" required><span>He leído la <a href="privacidad.html">política de privacidad</a> y acepto que Balearic Building Works, S.L. Unipersonal trate mis datos para responder a mi solicitud. *</span></label>
+
+            <div class="campo--ancho"><div class="h-captcha" data-captcha="true"></div></div>
+
+            <p class="campo--ancho formulario__estado" id="formulario-estado" role="status" aria-live="polite" hidden></p>
+
+            <div class="campo--ancho formulario__envio">
+              <button class="boton" type="submit">Enviar solicitud <span aria-hidden="true">↗</span></button>
+              <p class="formulario__nota">Las fotografías y los planos puedes enviarlos por WhatsApp o por correo cuando te respondamos.</p>
+            </div>
+
+            <p class="campo--ancho formulario__legal"><strong>Información básica sobre protección de datos.</strong> Responsable: Balearic Building Works, S.L. Unipersonal. Finalidad: atender tu solicitud y, en su caso, elaborar un presupuesto. Base jurídica: tu consentimiento. Derechos: acceso, rectificación, supresión y otros, escribiendo a info@balearicworks.es. Más información en la <a href="privacidad.html">política de privacidad</a>. Formulario protegido con hCaptcha, cuya <a href="https://www.hcaptcha.com/privacy" rel="noopener">política de privacidad</a> y <a href="https://www.hcaptcha.com/terms" rel="noopener">términos</a> se aplican.</p>
+          </form>
         </div>
       </div>
     </section>
@@ -246,7 +303,7 @@
           <ul class="cierre__enlaces">
             <li><a data-evento="click_telefono" data-ubicacion="pie" href="tel:+34621210483">+34 621 210 483</a></li>
             <li><a data-evento="click_whatsapp" data-ubicacion="pie" href="https://wa.me/34621210483" target="_blank" rel="noopener">WhatsApp</a></li>
-            <li><a data-evento="click_email" data-ubicacion="pie" href="mailto:balearicworks@outlook.es">balearicworks@outlook.es</a></li>
+            <li><a data-evento="click_email" data-ubicacion="pie" href="mailto:info@balearicworks.es">info@balearicworks.es</a></li>
           </ul>
         </div>
       </div>
@@ -258,6 +315,7 @@
         <p class="cierre__identificacion">Balearic Building Works, S.L. Unipersonal · CIF B19822535 · Camí dels Reis, 164, planta 2, puerta 11, 07011 Palma (Illes Balears) · Inscrita en el Registro Mercantil de Mallorca, hoja PM-100860.</p>
         <div class="cierre__legales">
           <a href="aviso-legal.html">Aviso legal</a>
+          <a href="privacidad.html">Política de privacidad</a>
           <a href="cookies.html">Política de cookies</a>
           <button type="button" class="enlace-boton" data-cookies-abrir>Configurar cookies</button>
         </div>
@@ -270,5 +328,6 @@
     <a data-evento="click_whatsapp" data-ubicacion="barra_movil" href="https://wa.me/34621210483?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">WhatsApp</a>
   </div>
   <script src="js/consentimiento.js" defer></script>
+  <script src="js/formulario.js" defer></script>
 </body>
 </html>

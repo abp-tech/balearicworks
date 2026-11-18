@@ -13,7 +13,7 @@ Para verla en local basta con abrir `index.html` en el navegador.
 
 ## Pendiente
 
-- Cambiar `balearicworks@outlook.es` por `info@balearicworks.es` cuando esté activo (en `index.html` y `aviso-legal.html`).
+- Cambiar `info@balearicworks.es` por `info@balearicworks.es` cuando esté activo (en `index.html` y `aviso-legal.html`).
 - Formulario de contacto (requiere servicio de envío) y política de privacidad.
 - Política de cookies y banner solo si se añade analítica u otros servicios que usen cookies.
 - Confirmar con el asesor el cambio de denominación (AKKO Services Property Care, S.L.U. → Balearic Building Works, S.L. Unipersonal), pendiente de inscripción en el Registro Mercantil.
@@ -48,3 +48,11 @@ DNSSEC puede seguir activado: los nameservers no cambian, solo se añaden regist
 - Eventos (atributos `data-evento` en el HTML): `pedir_presupuesto`, `click_whatsapp`, `click_telefono`, `click_email`, `consultar_servicio`. Parámetros: `ubicacion` (cabecera, hero, servicios, proyectos, contacto, pie, barra_movil) y `servicio`.
 - Marcar como eventos clave en GA4: `click_whatsapp`, `click_telefono`, `click_email`.
 - `cookies.html`: política de cookies.
+
+## Formulario de contacto (Web3Forms)
+
+- `index.html` (sección Contacto) envía a `https://api.web3forms.com/submit` con la clave de acceso pública del formulario. Las solicitudes llegan a info@balearicworks.es.
+- `js/formulario.js`: validación en español, hCaptcha (cargado al empezar a usar el formulario), campo trampa `botcheck`, trampa de tiempo (3 s: pide volver a pulsar, no descarta la solicitud), límite de enlaces en el mensaje y envío por fetch. Sin JavaScript el formulario envía igualmente a Web3Forms.
+- En el panel de Web3Forms (app.web3forms.com) debe estar activado **hCaptcha** como opción de bloqueo de spam.
+- Evento GA4 `generate_lead` al enviar, solo si hay consentimiento de cookies de medición.
+- `privacidad.html`: política de privacidad (borrador, a revisar por el asesor). `cookies.html` incluye hCaptcha.
