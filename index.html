@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Balearic Works · Reformas y mantenimiento en Mallorca</title>
-  <meta name="description" content="Balearic Works, nueva empresa de reformas y mantenimiento en Mallorca. Viviendas, villas y espacios profesionales, con equipo y medios propios. Nuestra web estará disponible muy pronto.">
+  <meta name="description" content="Reformas integrales y mantenimiento de propiedades en Mallorca, con equipo y medios propios. Proyectos a medida para hoteles y locales. Solicita presupuesto por teléfono o WhatsApp.">
   <meta name="theme-color" content="#28306e">
   <link rel="canonical" href="https://balearicworks.es/">
 
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_ES">
   <meta property="og:site_name" content="Balearic Works">
-  <meta property="og:title" content="Nace Balearic Works · Reformas y mantenimiento en Mallorca">
+  <meta property="og:title" content="Balearic Works · Reformas y mantenimiento en Mallorca">
   <meta property="og:description" content="Reformas integrales y mantenimiento de propiedades en Mallorca, con equipo y medios propios.">
   <meta property="og:url" content="https://balearicworks.es/">
 
@@ -24,11 +24,23 @@
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     "name": "Balearic Works",
+    "legalName": "Balearic Building Works, S.L. Unipersonal",
+    "taxID": "B19822535",
     "url": "https://balearicworks.es/",
     "description": "Reformas integrales y mantenimiento de propiedades en Mallorca.",
     "email": "balearicworks@outlook.es",
     "telephone": "+34621210483",
-    "areaServed": "Mallorca, Illes Balears"
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Palma",
+      "addressRegion": "Illes Balears",
+      "addressCountry": "ES"
+    },
+    "areaServed": "Mallorca, Illes Balears",
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "15:00" }
+    ]
   }
   </script>
 </head>
@@ -38,7 +50,6 @@
   <header class="cabecera">
     <div class="contenedor cabecera__fila">
       <a class="marca" href="/" aria-label="Balearic Works, inicio">
-        <!-- Logo original de Figma (SVG completo: marca + nombre). Ver assets/README.md -->
         <img src="assets/logo.svg" alt="Balearic Works" width="233" height="43">
       </a>
 
@@ -47,45 +58,168 @@
         <p class="cabecera__lugar">Mallorca, Illes Balears</p>
       </div>
 
-      <p class="micro micro--navy cabecera__estado">Nueva web · Próximamente</p>
+      <nav class="nav" aria-label="Principal">
+        <a class="nav__enlace" href="#servicios">Servicios</a>
+        <a class="nav__enlace" href="#contacto">Contacto</a>
+        <a class="boton" href="#contacto">Pedir presupuesto <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
   </header>
 
   <main>
+    <!-- Presentación -->
     <section class="presentacion" aria-labelledby="titular">
-      <div class="contenedor presentacion__rejilla">
-        <div class="presentacion__texto">
-          <p class="micro">Estamos preparando algo nuevo</p>
-          <h1 id="titular" class="hero">Nace<br>Balearic Works.</h1>
-          <p class="cuerpo presentacion__aviso">Somos una nueva empresa de reformas y mantenimiento en Mallorca. Nuestra web estará disponible muy pronto.</p>
+      <div class="contenedor">
+        <p class="micro">Reformas integrales / Mantenimiento</p>
+        <h1 id="titular" class="hero">Reformas y mantenimiento<br class="solo-escritorio"> en Mallorca.</h1>
 
-          <p class="micro presentacion__rotulo">Somos Balearic Works</p>
-          <p class="intro">Nacemos para renovar y conservar viviendas, villas y espacios profesionales en Mallorca, con equipo y medios propios.</p>
+        <div class="presentacion__rejilla">
+          <div class="presentacion__texto">
+            <p class="micro">Ejecución con criterio</p>
+            <p class="intro">En Balearic Works renovamos y conservamos viviendas, villas y espacios profesionales, con equipo y medios propios.</p>
+            <div class="acciones">
+              <a class="boton" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a>
+              <a class="boton boton--linea" href="https://wa.me/34621210483?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">WhatsApp <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+
+          <figure class="presentacion__imagen">
+            <img src="assets/obra.jpg" alt="Vista aérea de una obra de reforma en Mallorca" width="616" height="446" fetchpriority="high">
+            <figcaption class="micro">Viviendas · Propiedades · Espacios profesionales</figcaption>
+          </figure>
         </div>
-
-        <figure class="presentacion__imagen">
-          <img src="assets/obra.jpg" alt="Vista aérea de una obra de reforma en Mallorca" width="540" height="420" fetchpriority="high">
-          <figcaption class="micro">Reformas integrales / Mantenimiento</figcaption>
-        </figure>
       </div>
     </section>
 
-    <section id="contacto" class="contacto" aria-labelledby="contacto-titulo">
-      <div class="contenedor contacto__rejilla">
-        <div class="contacto__invitacion">
-          <p class="micro">Mientras tanto, hablemos</p>
-          <h2 id="contacto-titulo" class="titulo">Tu próximo proyecto<br>empieza aquí.</h2>
-          <p class="cuerpo">Cuéntanos qué quieres reformar o mantener.</p>
-        </div>
+    <!-- Servicios -->
+    <section id="servicios" class="seccion" aria-labelledby="servicios-titulo">
+      <div class="contenedor">
+        <div class="reticula">
+          <p class="micro reticula__rotulo">01 / Servicios</p>
+          <div class="reticula__contenido">
+            <h2 id="servicios-titulo" class="titulo titulo--navy">Renovar y conservar.</h2>
 
-        <div class="contacto__datos">
-          <div class="dato">
-            <p class="micro">Escríbenos</p>
-            <a class="titulo dato__valor" href="mailto:balearicworks@outlook.es">balearicworks@outlook.es</a>
+            <ul class="lista">
+              <li class="fila">
+                <span class="micro fila__num">01</span>
+                <div class="fila__texto">
+                  <h3 class="titulo titulo--navy">Reformas integrales</h3>
+                  <p class="cuerpo-tinta">Reformas integrales de viviendas y villas: distribución, instalaciones y acabados según el estado del inmueble.</p>
+                </div>
+                <a class="fila__enlace" href="#contacto">Consultar <span aria-hidden="true">↗</span></a>
+              </li>
+              <li class="fila">
+                <span class="micro fila__num">02</span>
+                <div class="fila__texto">
+                  <h3 class="titulo titulo--navy">Mantenimiento de propiedades</h3>
+                  <p class="cuerpo-tinta">Revisiones, conservación y reparaciones para atender el desgaste y las necesidades de cada propiedad.</p>
+                </div>
+                <a class="fila__enlace" href="#contacto">Consultar <span aria-hidden="true">↗</span></a>
+              </li>
+            </ul>
           </div>
-          <div class="dato">
-            <p class="micro">Llámanos</p>
-            <a class="titulo dato__valor" href="tel:+34621210483">+34 621 210 483</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos a medida -->
+    <section class="proyectos" aria-labelledby="proyectos-titulo">
+      <div class="contenedor">
+        <div class="reticula">
+          <p class="micro reticula__rotulo">02 / Proyectos a medida</p>
+          <div class="reticula__contenido">
+            <h2 id="proyectos-titulo" class="titulo">Hoteles y espacios de negocio.</h2>
+            <p class="intro proyectos__intro">Cada actuación se estudia de forma individual y se planifica por fases, para que el resultado responda a la imagen del establecimiento.</p>
+
+            <ul class="lista lista--oscura">
+              <li class="fila">
+                <span class="micro fila__num">01</span>
+                <div class="fila__texto">
+                  <h3 class="titulo">Hoteles</h3>
+                  <p>Renovación de habitaciones y zonas comunes, con fases adaptadas al calendario del establecimiento.</p>
+                </div>
+                <a class="fila__enlace" href="#contacto">Consultar proyecto <span aria-hidden="true">↗</span></a>
+              </li>
+              <li class="fila">
+                <span class="micro fila__num">02</span>
+                <div class="fila__texto">
+                  <h3 class="titulo">Locales y oficinas</h3>
+                  <p>Distribución, instalaciones y acabados al servicio de la actividad y de la imagen de la marca.</p>
+                </div>
+                <a class="fila__enlace" href="#contacto">Consultar proyecto <span aria-hidden="true">↗</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proceso -->
+    <section class="seccion" aria-labelledby="proceso-titulo">
+      <div class="contenedor">
+        <div class="reticula">
+          <p class="micro reticula__rotulo">03 / Proceso</p>
+          <div class="reticula__contenido">
+            <h2 id="proceso-titulo" class="titulo titulo--navy">De la primera conversación<br class="solo-escritorio"> a la revisión final.</h2>
+
+            <ol class="lista">
+              <li class="fila fila--proceso">
+                <span class="micro fila__num">01</span>
+                <h3 class="fila__titulo">Escuchar y definir</h3>
+                <p class="fila__detalle">Conocer el inmueble, su ubicación y lo que quieres reformar o mantener.</p>
+              </li>
+              <li class="fila fila--proceso">
+                <span class="micro fila__num">02</span>
+                <h3 class="fila__titulo">Valorar y planificar</h3>
+                <p class="fila__detalle">Concretar los trabajos, los materiales y las fases de ejecución.</p>
+              </li>
+              <li class="fila fila--proceso">
+                <span class="micro fila__num">03</span>
+                <h3 class="fila__titulo">Ejecutar y coordinar</h3>
+                <p class="fila__detalle">Coordinar los oficios, los recursos y el acceso al inmueble.</p>
+              </li>
+              <li class="fila fila--proceso">
+                <span class="micro fila__num">04</span>
+                <h3 class="fila__titulo">Revisar y entregar</h3>
+                <p class="fila__detalle">Comprobar los trabajos y los detalles pendientes de entrega.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contacto" aria-labelledby="contacto-titulo">
+      <div class="contenedor">
+        <p class="micro">04 / Hablemos</p>
+        <h2 id="contacto-titulo" class="hero">Cuéntanos<br>qué necesitas.</h2>
+
+        <div class="contacto__rejilla">
+          <div class="contacto__invitacion">
+            <p class="intro">Cuéntanos qué quieres reformar o mantener y dónde está el inmueble.</p>
+            <p class="micro contacto__subrotulo">Para valorar el trabajo, indícanos</p>
+            <ul class="contacto__lista">
+              <li>Tipo de inmueble y municipio</li>
+              <li>Qué necesitas renovar o mantener</li>
+              <li>Fotografías, planos o información disponible</li>
+            </ul>
+          </div>
+
+          <div class="contacto__datos">
+            <div class="dato">
+              <p class="micro">Llámanos</p>
+              <a class="titulo dato__valor" href="tel:+34621210483">+34 621 210 483</a>
+              <p class="dato__nota">L–V · 09:00–21:00 &nbsp;·&nbsp; Sábado · 09:00–15:00</p>
+            </div>
+            <div class="dato">
+              <p class="micro">WhatsApp</p>
+              <a class="titulo dato__valor" href="https://wa.me/34621210483?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">Escríbenos <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="dato">
+              <p class="micro">Correo electrónico</p>
+              <a class="titulo dato__valor" href="mailto:balearicworks@outlook.es">balearicworks@outlook.es</a>
+            </div>
           </div>
         </div>
       </div>
@@ -93,10 +227,43 @@
   </main>
 
   <footer class="cierre">
-    <div class="contenedor cierre__fila">
-      <p>Balearic Works · Reformas y mantenimiento</p>
-      <p>Mallorca, Illes Balears</p>
+    <div class="contenedor">
+      <div class="cierre__columnas">
+        <div class="cierre__marca">
+          <img src="assets/logo.svg" alt="Balearic Works" width="233" height="43">
+          <p>Reformas integrales y mantenimiento de propiedades en Mallorca. Equipo y medios propios para viviendas, villas y espacios profesionales.</p>
+        </div>
+        <div>
+          <p class="cierre__rotulo">Servicios</p>
+          <ul class="cierre__enlaces">
+            <li><a href="#servicios">Reformas integrales</a></li>
+            <li><a href="#servicios">Mantenimiento de propiedades</a></li>
+            <li><a href="#contacto">Hoteles y locales</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="cierre__rotulo">Contacto en Mallorca</p>
+          <ul class="cierre__enlaces">
+            <li><a href="tel:+34621210483">+34 621 210 483</a></li>
+            <li><a href="https://wa.me/34621210483" target="_blank" rel="noopener">WhatsApp</a></li>
+            <li><a href="mailto:balearicworks@outlook.es">balearicworks@outlook.es</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="cierre__linea">
+
+      <div class="cierre__legal">
+        <p>© 2026 Balearic Works</p>
+        <p class="cierre__identificacion">Balearic Building Works, S.L. Unipersonal · CIF B19822535 · Camí dels Reis, 164, planta 2, puerta 11, 07011 Palma (Illes Balears) · Inscrita en el Registro Mercantil de Mallorca, hoja PM-100860.</p>
+        <a href="aviso-legal.html">Aviso legal</a>
+      </div>
     </div>
   </footer>
+
+  <div class="barra-contacto" role="group" aria-label="Contacto rápido">
+    <a href="tel:+34621210483">Llamar</a>
+    <a href="https://wa.me/34621210483?text=Hola%2C%20me%20gustar%C3%ADa%20solicitar%20un%20presupuesto." target="_blank" rel="noopener">WhatsApp</a>
+  </div>
 </body>
 </html>
