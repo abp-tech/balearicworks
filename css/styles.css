@@ -1,0 +1,244 @@
+/* Balearic Works · Próximamente
+   Fuente: Figma "Web Global" · frame 1436:1694 (escritorio 1440 px).
+   Móvil derivado del escritorio con las medidas de los frames móviles del archivo (390 px, margen 24 px). */
+
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("../assets/fonts/figtree-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Figtree";
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+  src: url("../assets/fonts/figtree-latin-ext-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  --bw-paper: #f8f8f4;
+  --bw-navy: #28306e;
+  --bw-ink: #1f232b;
+  --bw-muted: #565b67;
+  --bw-line: #bfc2c6;
+  --bw-white: #ffffff;
+
+  --margen: 24px;
+  --ancho: 1312px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bw-paper);
+  color: var(--bw-ink);
+  font-family: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, p, figure { margin: 0; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+
+.contenedor {
+  width: min(100% - 2 * var(--margen), var(--ancho));
+  margin-inline: auto;
+}
+
+/* Accesibilidad */
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -64px;
+  z-index: 10;
+  padding: 10px 16px;
+  background: var(--bw-navy);
+  color: var(--bw-white);
+  font-size: 16px;
+  text-decoration: none;
+}
+.skip:focus { top: 16px; }
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Estilos de texto (BW / Micro · Body · Intro · Title · Hero) */
+.micro {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--bw-muted);
+}
+.micro--navy { color: var(--bw-navy); }
+
+.cuerpo { font-size: 18px; line-height: 1.5; color: var(--bw-muted); }
+.intro  { font-size: 23px; line-height: 1.4; color: var(--bw-ink); }
+.titulo { font-size: 44px; line-height: 1.15; font-weight: 400; }
+.hero   { font-size: 82px; line-height: 1.05; font-weight: 400; color: var(--bw-navy); }
+
+/* ---------- Cabecera ---------- */
+.cabecera { background: var(--bw-paper); }
+
+.cabecera__fila {
+  display: grid;
+  grid-template-columns: 336px 1fr auto;
+  align-items: center;
+  height: 112px;
+  border-bottom: 1px solid var(--bw-line);
+}
+
+.marca { display: inline-block; line-height: 0; }
+.marca img { width: 233px; height: auto; }
+
+.cabecera__lugar { font-size: 18px; line-height: 1.5; color: var(--bw-muted); }
+.cabecera__estado { text-align: right; }
+
+/* ---------- Presentación ---------- */
+.presentacion__rejilla {
+  display: grid;
+  grid-template-columns: minmax(0, 708fr) minmax(0, 540fr);
+  column-gap: 64px;
+  padding-top: 48px;
+  padding-bottom: 104px;
+  align-items: start;
+}
+
+.presentacion__texto .hero { margin-top: 32px; }
+.presentacion__aviso { margin-top: 26px; max-width: 640px; }
+.presentacion__rotulo { margin-top: 52px; }
+.presentacion__texto .intro { margin-top: 18px; max-width: 640px; }
+
+.presentacion__imagen img {
+  width: 100%;
+  aspect-ratio: 540 / 420;
+  object-fit: cover;
+  background: var(--bw-line);
+}
+.presentacion__imagen figcaption { margin-top: 20px; }
+
+/* ---------- Contacto ---------- */
+.contacto {
+  background: var(--bw-navy);
+  color: var(--bw-white);
+}
+.contacto .micro,
+.contacto .cuerpo { color: var(--bw-white); }
+
+.contacto__rejilla {
+  display: grid;
+  grid-template-columns: minmax(0, 520fr) minmax(0, 664fr);
+  column-gap: 128px;
+  padding-top: 44px;
+  padding-bottom: 54px;
+  align-items: start;
+}
+
+.contacto__invitacion .titulo { margin-top: 28px; }
+.contacto__invitacion .cuerpo { margin-top: 30px; }
+
+.dato { padding-bottom: 27px; }
+.dato + .dato {
+  padding-top: 28px;
+  padding-bottom: 0;
+  border-top: 1px solid rgb(255 255 255 / 0.3);
+}
+.dato:first-child { padding-bottom: 27px; }
+
+.dato__valor {
+  display: block;
+  margin-top: 16px;
+  color: var(--bw-white);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.dato__valor:hover { text-decoration: underline; text-underline-offset: 8px; text-decoration-thickness: 1px; }
+
+/* ---------- Cierre ---------- */
+.cierre { background: var(--bw-paper); color: var(--bw-muted); }
+.cierre__fila {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 28px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* ---------- Escritorio fluido (960 – 1439 px) ---------- */
+@media (min-width: 960px) {
+  :root { --margen: 64px; }
+  .hero   { font-size: clamp(48px, 5.7vw, 82px); }
+  .titulo { font-size: clamp(30px, 3.05vw, 44px); }
+  .intro  { font-size: clamp(19px, 1.6vw, 23px); }
+}
+
+/* ---------- Tablet y móvil (< 960 px) ---------- */
+@media (max-width: 959.98px) {
+  :root { --margen: 40px; }
+
+  .cabecera__fila {
+    grid-template-columns: 1fr auto;
+    height: auto;
+    padding-block: 28px;
+    row-gap: 14px;
+  }
+  .cabecera__actividad { grid-column: 1 / -1; grid-row: 2; }
+  .cabecera__estado { grid-column: 2; grid-row: 1; }
+
+  .hero   { font-size: clamp(36px, 12vw, 64px); }
+  .titulo { font-size: clamp(30px, 8vw, 40px); }
+  .dato__valor { font-size: clamp(21px, 6.6vw, 36px); }
+  .intro  { font-size: 20px; }
+
+  .presentacion__rejilla {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 40px;
+    padding-top: 36px;
+    padding-bottom: 56px;
+  }
+  .presentacion__imagen img { aspect-ratio: 3 / 2; }
+  .presentacion__imagen figcaption { margin-top: 14px; }
+
+  .contacto__rejilla {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+  .contacto__invitacion .titulo { margin-top: 20px; }
+  .contacto__invitacion .cuerpo { margin-top: 20px; }
+}
+
+@media (max-width: 599.98px) {
+  :root { --margen: 24px; }
+
+  .marca img { width: 200px; }
+  .cabecera__fila {
+    grid-template-columns: 1fr;
+    padding-block: 24px;
+    row-gap: 12px;
+  }
+  .cabecera__estado { grid-column: 1; grid-row: 2; text-align: left; }
+  /* La actividad y la zona ya aparecen en la presentación y en el cierre. */
+  .cabecera__actividad { display: none; }
+
+  .presentacion__texto .hero { margin-top: 24px; }
+  .presentacion__aviso { margin-top: 20px; font-size: 17px; }
+  .presentacion__rotulo { margin-top: 36px; }
+
+  .cierre__fila { flex-direction: column; gap: 4px; padding-block: 24px; }
+}
